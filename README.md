@@ -1,24 +1,22 @@
-# README
+# Busco República
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+:mag: Busco república de forma efeciente! :school_satchel: :mortar_board:
 
-Things you may want to cover:
+O universitário poderá encontrar sua nova casa de forma fácil e centralizada. Não gastando tempo e dinheiro, visto que muitos que passam no vestibular saem de outros estados ou cidades.
 
-* Ruby version
+Busco República The system requires:
 
-* System dependencies
+- Ruby version >= 2.2
+- Rails 5.0.1
+- Postgresql version > 9
 
-* Configuration
+Front-end
 
-* Database creation
+- gem materialize-sass
 
-* Database initialization
+Metricas
 
-* How to run the test suite
+- gem 'rails_best_practices'
+- gem 'rubocop', require: false
+- gem 'rubycritic', require: false
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
