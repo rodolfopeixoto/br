@@ -1,0 +1,41 @@
+.btn, .btn-large, .btn-floating {
+  .side-nav{
+      box-shadow: none;
+      border-radius: 2px;
+    }
+   text-transform: capitalize;
+}
+
+h1 {
+    font-size: 44px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-rendering: optimizelegibility;
+}
+
+
+
+.btn-small {
+    height: 30px;
+    line-height: 24px;
+    padding: 0.2em 0.9em;
+    text-transform: capitalize;
+}

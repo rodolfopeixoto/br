@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <% flash.each do |message_type, message| %>
+      <%= javascript_tag "Materialize.toast('#{message}', 4000)" %>
+    <% end %>
+
+    <%= render 'layouts/header' %>
+    <main class="container">
+      <%= yield %>
+    </main>
   </body>
 </html>

@@ -13,6 +13,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise'
 gem 'ffaker'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -22,12 +23,14 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.1'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier', '>= 1.3.0'
 
 
 gem 'rails_best_practices'
+gem 'rails-controller-testing'
 gem 'rubocop', require: false
 gem 'rubycritic', require: false
 

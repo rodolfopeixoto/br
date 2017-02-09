@@ -1,0 +1,47 @@
+header {
+    display: flex;
+}
+
+.brand-logo svg{
+    width: 150px;
+    height: 64px;
+}
+
+nav.nav-bar{
+    color: blue;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: none;
+
+    a {
+        color: #5e5e5e;
+    }
+
+    ul a {
+         color: #2a2a2a;
+
+    }
+
+
+      ul a:hover {
+        background-color: white;
+        font-weight: bold;
+      }
+
+}
+
+a.btn.red.accent-2.btn-ad {
+    color: white;
+}
+
+
+.properties_new_h2{
+  font-size: 23px;
+  color: #474747;
+}
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+}

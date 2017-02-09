@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  properties:
+    index:
+      no_property_registered: "You have no property registered"
+      text_no_property_registered: "Earn money by renting your property to the university of his city. You will be helping not only the students but also your country!"
+      new_property: "New Property"
+    new:
+      hi: "Hello"
+      title_preparation_ad: "Let's prepare you to welcome the university students."
+      step: "Step"
+      properties_kind_of_space: "What kind of space do you have?"
