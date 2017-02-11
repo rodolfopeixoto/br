@@ -11,3 +11,9 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - selenium
+    environment:
+      - SELENIUM_REMOTE_HOST=selenium
+  selenium:
+    image: selenium/standalone-firefox
+    container_name: selenium

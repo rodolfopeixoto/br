@@ -24,6 +24,11 @@ pt-BR:
         share_room: "Quarto Compartilhado"
         price: "Preço"
         description: "Descrição"
+  controllers:
+    property:
+      create:
+        flash:
+          notice: 'Oba, sua casa foi cadastrada! Aguarde, que já, já algum universitário entrará em contato!'
 
 
 

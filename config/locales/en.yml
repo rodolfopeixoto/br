@@ -30,3 +30,8 @@ en:
       title_preparation_ad: "Let's prepare you to welcome the university students."
       step: "Step"
       properties_kind_of_space: "What kind of space do you have?"
+  controllers:
+    property:
+      create:
+        flash:
+          notice: 'Oba, your house has been registered! Wait, that already, some university will contact!'

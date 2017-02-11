@@ -6,3 +6,5 @@ ADD Gemfile /buscorepublica/Gemfile
 ADD Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 ADD . /buscorepublica
+
+RUN bundle install

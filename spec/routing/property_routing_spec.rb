@@ -11,9 +11,9 @@ RSpec.describe "property routing" do
     expect(get: "/properties/new").to route_to(
           controller: "properties", action: "new"
         )
-  #   expect(get: "/properties/1").to route_to(
-  #         controller: "properties", action: "show", id: "1"
-  #       )
+    expect(get: "/properties/1").to route_to(
+          controller: "properties", action: "show", id: "1"
+        )
   #   expect(get: "/properties/1/edit").to route_to(
   #         controller: "/properties/", action: "edit", id: "1"
   #       )
