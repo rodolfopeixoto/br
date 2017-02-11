@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "The user can register a new properties" do
 
+  let(:property) { FactoryGirl.create(:property) }
   let(:submit) {  find(:css, 'input[type="submit"]') }
 
   scenario "with valid attributes", js: true do
@@ -9,7 +10,7 @@ RSpec.feature "The user can register a new properties" do
 
     click_link I18n.t('.properties.index.new_property')
 
-    fill_in I18n.t('.activerecord.attributes.property.title'),             with: "Sublime text 3"
+    fill_in I18n.t('.activerecord.attributes.property.title'),             with: property.title
     fill_in  I18n.t('.activerecord.attributes.property.accommodates'),      with: 10
     fill_in I18n.t('.activerecord.attributes.property.bathrooms'),         with: 1
     fill_in I18n.t('.activerecord.attributes.property.number_of_rooms'),   with: 10
@@ -23,5 +24,6 @@ RSpec.feature "The user can register a new properties" do
     submit.click
 
       expect(page).to have_content I18n.t('.controllers.property.create.flash.notice')
+      expect(page).to have_title "Busco República"
   end
 end
