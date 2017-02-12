@@ -43,3 +43,7 @@ en:
     message:
       invalid: 'Unfortunately :( We found'
       invalid_continue: ', they are:'
+  menu:
+    register_fraternity: 'Sign Fraternity'
+    signup: 'Sign up'
+    signin: 'Sign in'

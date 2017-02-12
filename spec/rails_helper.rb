@@ -8,6 +8,7 @@ require 'shoulda/matchers'
 require 'capybara/rspec'
 require 'ffaker'
 require 'support/database_cleaner'
+require 'support/locale'
 
 ActiveRecord::Migration.maintain_test_schema!
 

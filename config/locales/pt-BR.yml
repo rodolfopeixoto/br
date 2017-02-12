@@ -37,6 +37,10 @@ pt-BR:
     message:
       invalid: 'Infelizmente :( Encontramos'
       invalid_continue: ', são eles:'
+  menu:
+    register_fraternity: 'Cadastrar República'
+    signup: 'Cadastre-se'
+    signin: 'Entrar'
 
 
 
