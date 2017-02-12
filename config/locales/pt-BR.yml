@@ -29,6 +29,14 @@ pt-BR:
       create:
         flash:
           notice: 'Oba, sua casa foi cadastrada! Aguarde, que já, já algum universitário entrará em contato!'
+          alert: 'Por favor, verifique se os campos estão preenchidos corretamente.'
+  word:
+    error: 'erro'
+    errors: 'erros'
+  form:
+    message:
+      invalid: 'Infelizmente :( Encontramos'
+      invalid_continue: ', são eles:'
 
 
 

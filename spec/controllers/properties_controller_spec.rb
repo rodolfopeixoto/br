@@ -36,9 +36,12 @@ RSpec.describe PropertiesController, type: :controller do
   end
 
   describe 'POST create' do
-    let(:valid_data) { FactoryGirl.attributes_for(:property) }
 
     context 'valid data' do
+
+
+    let(:valid_data) { FactoryGirl.attributes_for(:property) }
+
       it 'redirects to properties#show' do
         post :create, params: { property: valid_data }
          expect(response).to redirect_to(property_path(assigns[:property]))
@@ -51,19 +54,22 @@ RSpec.describe PropertiesController, type: :controller do
       end
     end
 
-   # context 'invalid data' do
-   #   let(:invalid_data) { FactoryGirl.attributes_for(:property) }
-   #   it 'renders :new template' do
-   #    post :create, params: { property: invalid_data }
-   #    expect(response).to render_template(:new)
-   #   end
+   context 'invalid data' do
 
-   #   it 'doesn\'t create new property in the database' do
-   #    expect {
-   #      post :create, params: { property: invalid_data }
-   #    }.not_to change(Property, :count)
-   #   end
-   # end
+
+    let(:invalid_data) { FactoryGirl.attributes_for(:property, title: '') }
+
+     it 'renders :new template' do
+      post :create, params: { property: invalid_data }
+      expect(response).to render_template(:new)
+     end
+
+     it 'doesn\'t create new property in the database' do
+      expect {
+        post :create, params: { property: invalid_data }
+      }.not_to change(Property, :count)
+     end
+   end
 
   end
 end

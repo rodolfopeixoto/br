@@ -14,9 +14,16 @@
 
     <%= render 'layouts/header' %>
 
-          <% flash.each do |message_type, message| %>
-            <%= javascript_tag "Materialize.toast('#{message}', 10000, 'rounded')" %>
-           <% end %>
+   <% flash.each do |message_type, message| %>
+      <div class="container">
+        <div class="row">
+          <div class="card-content">
+              <p><%= "#{message}" %></p>
+          </div>
+        </div>
+      </div>
+   <% end %>
+
     <main class="container">
 
       <%= yield %>

@@ -1,3 +1,16 @@
+<% if @property.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+       <%= "#{I18n.t('.form.message.invalid')} #{pluralize(@property.errors.count, I18n.t('.word.errors'))} #{I18n.t('.form.message.invalid_continue')}" %>
+    </h2>
+    <ul>
+       <% @property.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+    </ul>
+   </div>
+    <% end %>
+
 <div class="row">
   <div class="col s12">
     <h2 class="properties_new_h2"><%= "#{t('.hi')}, Rodolfo! #{ t('.title_preparation_ad')}" %></h2>
@@ -7,13 +20,13 @@
 
     <h4><%= t('.properties_kind_of_space') %></h4>
 
-  <%= simple_form_for @property do |f| %>
-    <%= f.input :title %>
+  <%= simple_form_for(@property, html: { novalidate: true }) do |f| %>
+    <%= f.input :title, required: true %>
     <%= f.input :type_property %>
     <%= f.input :accommodates, input_html: { min: 1, max: 40 } %>
     <%= f.input :bathrooms, input_html: {  min: 1, max: 10 } %>
     <%= f.input :number_of_rooms, input_html: { min: 1, max: 20 } %>
-    <%= f.input :furnished, as: :boolean, checked_value: true, unchecked_value: false, input_html:{} %>
+    <%= f.input :furnished, as: :boolean, checked_value: true, unchecked_value: false %>
     <%= f.input :single_room, as: :boolean, checked_value: true, unchecked_value: false, input_html:{} %>
     <%= f.input :share_room, as: :boolean %>
     <%= f.input :price %>

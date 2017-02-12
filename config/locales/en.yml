@@ -35,3 +35,11 @@ en:
       create:
         flash:
           notice: 'Oba, your house has been registered! Wait, that already, some university will contact!'
+          alert: 'Please make sure the fields are filled out correctly.'
+  word:
+    error: 'error'
+    errors: 'errors'
+  form:
+    message:
+      invalid: 'Unfortunately :( We found'
+      invalid_continue: ', they are:'

@@ -1,4 +1,4 @@
-class PropertiesController < ApplicationController
+  class PropertiesController < ApplicationController
 
   def index
   end
@@ -14,7 +14,7 @@ class PropertiesController < ApplicationController
         flash[:notice] = I18n.t('.controllers.property.create.flash.notice')
         redirect_to @property
     else
-        #nothing
+        render :new
     end
   end
 
