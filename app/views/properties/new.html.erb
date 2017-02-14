@@ -21,17 +21,41 @@
     <h4><%= t('.properties_kind_of_space') %></h4>
 
   <%= simple_form_for(@property, html: { novalidate: true }) do |f| %>
-    <%= f.input :title, required: true %>
-    <%= f.input :type_property %>
-    <%= f.input :accommodates, input_html: { min: 1, max: 40 } %>
-    <%= f.input :bathrooms, input_html: {  min: 1, max: 10 } %>
-    <%= f.input :number_of_rooms, input_html: { min: 1, max: 20 } %>
-    <%= f.input :furnished, as: :boolean, checked_value: true, unchecked_value: false %>
-    <%= f.input :single_room, as: :boolean, checked_value: true, unchecked_value: false, input_html:{} %>
-    <%= f.input :share_room, as: :boolean %>
-    <%= f.input :price %>
-    <%= f.input :description, as: :text, input_html: {id: "textarea1", class: "materialize-textarea", "data-length": 250} %>
-  <%= f.button :submit %>
+
+    <div class="input-field col s12">
+      <%= f.input :title, required: true %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.association :archetype, collection: Archetype.all.map { |key| [I18n.t(".activerecord.attributes.archetype.#{key.name}"), key.id ] }, default: 1  %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :accommodates, input_html: { min: 1, max: 40 } %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :bathrooms, input_html: {  min: 1, max: 10 } %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :number_of_rooms, input_html: { min: 1, max: 20 } %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :furnished, as: :boolean, checked_value: true, unchecked_value: false %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :single_room, as: :boolean, checked_value: true, unchecked_value: false, input_html:{} %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :share_room, as: :boolean %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :price %>
+    </div>
+    <div class="input-field col s12">
+      <%= f.input :description, as: :text, input_html: {id: "textarea1", class: "materialize-textarea", "data-length": 250} %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.button :submit %>
+    </div>
 <% end %>
 
   </div>

@@ -1,3 +1,4 @@
 class Property < ApplicationRecord
-  validates :title, :type_property, :accommodates, :bathrooms, :number_of_rooms, :price, :description, presence: true
+  validates :title, :accommodates, :bathrooms, :number_of_rooms, :price, :description, presence: true
+  belongs_to :archetype
 end

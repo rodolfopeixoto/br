@@ -36,9 +36,18 @@ en:
         flash:
           notice: 'Oba, your house has been registered! Wait, that already, some university will contact!'
           alert: 'Please make sure the fields are filled out correctly.'
+  activerecord:
+    attributes:
+      type_fraternity:
+        fraternity: 'República Masculina'
+        sorority: 'República Femenina'
+        mixed_fraternity: 'República Mista'
+        lgbt_friendly: 'República LGBT Friendly'
   word:
     error: 'error'
     errors: 'errors'
+    archetype:
+      select: 'Select property type'
   form:
     message:
       invalid: 'Unfortunately :( We found'

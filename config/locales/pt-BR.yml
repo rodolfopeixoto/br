@@ -11,38 +11,35 @@ pt-BR:
       properties_kind_of_space: "Que tipo de espaço você tem?"
   activerecord:
     models:
-      property: "Imóvel"
+      property: 'Imóvel'
+      archetype: 'Tipo'
     attributes:
       property:
-        title: "Título"
-        type_property: "Tipo do Imóvel"
-        accommodates: "Acomoda"
-        bathrooms: "Banheiros"
-        number_of_rooms: "Número de Quartos"
-        furnished: "Imóbiliado"
-        single_room: "Quarto Individual"
-        share_room: "Quarto Compartilhado"
-        price: "Preço"
-        description: "Descrição"
-  controllers:
-    property:
-      create:
-        flash:
-          notice: 'Oba, sua casa foi cadastrada! Aguarde, que já, já algum universitário entrará em contato!'
-          alert: 'Por favor, verifique se os campos estão preenchidos corretamente.'
-  word:
-    error: 'erro'
-    errors: 'erros'
-  form:
-    message:
-      invalid: 'Infelizmente :( Encontramos'
-      invalid_continue: ', são eles:'
-  menu:
-    register_fraternity: 'Cadastrar República'
-    signup: 'Cadastre-se'
-    signin: 'Entrar'
-
-
+        title: 'Título'
+        type_property: 'Tipo do Imóvel'
+        accommodates: 'Acomoda'
+        bathrooms: 'Banheiros'
+        number_of_rooms: 'Número de Quartos'
+        furnished: 'Imóbiliado'
+        single_room: 'Quarto Individual'
+        share_room: 'Quarto Compartilhado'
+        price: 'Preço'
+        description: 'Descrição'
+        archetype: 'Tipo'
+      type_fraternity:
+        fraternity: 'República Masculina'
+        sorority: 'República Femenina'
+        mixed_fraternity: 'República Mista'
+        lgbt_friendly: 'República LGBT Friendly'
+      archetype:
+        apartment: 'Apartamento'
+        house: 'Casa'
+        condominium: 'Condomínio'
+        loft: 'Sobrado'
+        studio_apartment: 'Kitnet'
+        homestay: 'Casa de Família'
+        pensionatos: 'Pensão'
+        fraternity: 'República'
 
     errors:
       messages:
@@ -262,3 +259,22 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
+  controllers:
+    property:
+      create:
+        flash:
+          notice: 'Oba, sua casa foi cadastrada! Aguarde, que já, já algum universitário entrará em contato!'
+          alert: 'Por favor, verifique se os campos estão preenchidos corretamente.'
+  word:
+    error: 'erro'
+    errors: 'erros'
+    archetype:
+      select: 'Selecione o tipo do Imóvel'
+  form:
+    message:
+      invalid: 'Infelizmente :( Encontramos'
+      invalid_continue: ', são eles:'
+  menu:
+    register_fraternity: 'Cadastrar República'
+    signup: 'Cadastre-se'
+    signin: 'Entrar'

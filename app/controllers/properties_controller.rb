@@ -25,6 +25,6 @@
   private
 
   def property_params
-    params.require(:property).permit(:title,:type_property, :accommodates, :bathrooms, :number_of_rooms,:furnished, :single_room, :share_room, :price, :description )
+    params.require(:property).permit(:title, :accommodates, :bathrooms, :number_of_rooms,:furnished, :single_room, :share_room, :price, :description, :archetype_id )
   end
 end

@@ -13,24 +13,24 @@
 
       <ul class="right hide-on-med-and-down" id="main-menu-nav">
         <li>
-          <%= link_to I18n.t('.menu.register_fraternity'), new_property_path, class: 'btn red accent-2 btn-ad' %>
+          <%= link_to I18n.t('.menu.register_fraternity'), new_property_path, class: 'btn red accent-2 btn-ad', method: :get %>
         </li>
         <li>
-          <%= link_to I18n.t('.menu.signup'),  new_user_registration_path %>
+          <%= link_to I18n.t('.menu.signup'),  new_user_registration_path, method: :get %>
         </li>
         <li>
-          <%= link_to I18n.t('.menu.signin'),  new_user_session_path %>
+          <%= link_to I18n.t('.menu.signin'),  new_user_session_path, method: :get %>
         </li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li>
-          <%= link_to I18n.t('.menu.register_fraternity'), new_property_path, class: 'btn red accent-2 btn-ad' %>
+          <%= link_to I18n.t('.menu.register_fraternity'), new_property_path, class: 'btn red accent-2 btn-ad', method: :get %>
         </li>
         <li>
-          <%= link_to I18n.t('.menu.signup'),  new_user_registration_path %>
+          <%= link_to I18n.t('.menu.signup'),  new_user_registration_path, method: :get %>
         </li>
         <li>
-          <%= link_to I18n.t('.menu.signin'),  new_user_session_path %>
+          <%= link_to I18n.t('.menu.signin'),  new_user_session_path, method: :get %>
         </li>
       </ul>
     </div>
