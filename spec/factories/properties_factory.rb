@@ -11,17 +11,4 @@ FactoryGirl.define do
      price             400.00
      description       {  FFaker::Lorem.sentence(1) }
   end
-
-  factory :property_invalid do
-     title             nil
-     archetype
-     accommodates      nil
-     bathrooms         nil
-     number_of_rooms   nil
-     furnished         nil
-     single_room       nil
-     share_room        nil
-     price             nil
-     description       nil
-  end
 end

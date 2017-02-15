@@ -38,6 +38,8 @@ gem 'rubycritic', require: false
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'shoulda-matchers'
 end
 
@@ -49,6 +51,8 @@ group :test do
 end
 
 group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem 'brakeman', require: false
   gem 'bullet'
   gem 'listen', '~> 3.0.5'
