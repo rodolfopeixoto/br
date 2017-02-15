@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'ffaker'
 require 'support/database_cleaner'
 require 'support/locale'
+require 'factory_girl_rails'
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -56,5 +57,10 @@ RSpec.configure do |config|
     Capybara.use_default_driver
     Capybara.app_host = nil
   end
+
+  config.include FactoryGirl::Syntax::Methods
+
+
+
 
 end

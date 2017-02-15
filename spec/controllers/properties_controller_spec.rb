@@ -49,17 +49,6 @@ RSpec.describe PropertiesController, type: :controller do
       end
 
       it 'crete new property in database' do
-        puts ""
-        puts "archetype_id: #{archetype_id}"
-        puts ""
-        puts "archetype.name: #{Archetype.find(archetype_id).name}"
-        puts ""
-        puts "property.id: #{property.id}"
-        puts ""
-        puts "property: #{property}"
-        puts ""
-        puts "property_valid: #{property_valid}"
-        puts ""
         expect {
            post :create, params: { property: property_valid }
         }.to change(Property, :count).by(1)
@@ -68,7 +57,7 @@ RSpec.describe PropertiesController, type: :controller do
 
    context 'invalid data' do
     let(:archetype_id) { FactoryGirl.create(:archetype).id }
-    let(:property_invalid) { FactoryGirl.attributes_for(:property, archetype_id: archetype_id) }
+    let(:property_invalid) { FactoryGirl.attributes_for(:property, :invalid, archetype_id: archetype_id) }
 
      it 'renders :new template' do
       post :create, params: { property: property_invalid}

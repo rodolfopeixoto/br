@@ -2,6 +2,8 @@ require "rails_helper"
 
 RSpec.feature "The user can register a new properties" do
 
+
+  let(:archetype) { create_list(:archetype, 3) }
   let(:property) { FactoryGirl.create(:property) }
   let(:submit) {  find(:css, 'input[type="submit"]') }
 
@@ -14,28 +16,22 @@ RSpec.feature "The user can register a new properties" do
 
   scenario "with valid attributes", js: true do
 
-    fill_in I18n.t('.activerecord.attributes.property.title'),             with: property.title
-    fill_in  I18n.t('.activerecord.attributes.property.accommodates'),      with: 10
-    fill_in I18n.t('.activerecord.attributes.property.bathrooms'),         with: 1
-    fill_in I18n.t('.activerecord.attributes.property.number_of_rooms'),   with: 10
-    find('.input-field.boolean.optional.property_furnished label', text: I18n.t('.activerecord.attributes.property.furnished') ).click
-
-      # find('div.select-wrapper input', text: I18n.t('.activerecord.attributes.archetype.apartment')).click
-      # find('div.select-wrapper li', text: I18n.t('.activerecord.attributes.archetype.house')).click
-    find('.input-field.select.required.property_archetype', text: I18n.t('.activerecord.attributes.property.archetype')).click
-
-    find('.input-field.boolean.optional.property_single_room label', text: I18n.t('.activerecord.attributes.property.single_room') ).click
-    find('.input-field.boolean.optional.property_share_room label', text: I18n.t('.activerecord.attributes.property.share_room') ).click
-    fill_in I18n.t('.activerecord.attributes.property.price'),             with: 350.57
-    fill_in I18n.t('.activerecord.attributes.property.description'),       with: property.description
+    fill_in I18n.t('.activerecord.attributes.property.title'),             with: property[:title]
+    find('.property_archetype', text: I18n.t('.activerecord.attributes.property.archetype')).click
+    fill_in  I18n.t('.activerecord.attributes.property.accommodates'),      with: property[:accommodates]
+    fill_in I18n.t('.activerecord.attributes.property.bathrooms'),         with: property[:bathrooms]
+    fill_in I18n.t('.activerecord.attributes.property.number_of_rooms'),   with: property[:number_of_rooms]
+    find('label', text: I18n.t('.activerecord.attributes.property.furnished')).click
+    find('label', text: I18n.t('.activerecord.attributes.property.single_room')).click
+    find('label', text: I18n.t('.activerecord.attributes.property.share_room'))
+    fill_in I18n.t('.activerecord.attributes.property.price'),             with: property[:price]
+    fill_in I18n.t('.activerecord.attributes.property.description'),       with: property[:description]
 
     submit.click
-    within '.card-content' do
-      expect(page).to have_content I18n.t('.controllers.property.create.flash.notice')
-    end
+    expect(page).to have_css(".card-content", text: I18n.t('.controllers.property.create.flash.notice'))
   end
 
-  scenario "when providing invalid attributes", js: true do
+  scenario "when providing invalid attributes" do
 
       submit.click
 
