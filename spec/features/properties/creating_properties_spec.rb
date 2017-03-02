@@ -5,6 +5,7 @@ RSpec.feature "The user can register a new properties" do
 
   let(:archetype) { create_list(:archetype, 3) }
   let(:property) { FactoryGirl.create(:property) }
+  let(:rule) { FactoryGirl.create(:rule) }
   let(:submit) {  find(:css, 'input[type="submit"]') }
 
 
@@ -26,8 +27,11 @@ RSpec.feature "The user can register a new properties" do
     find('label', text: I18n.t('.activerecord.attributes.property.share_room'))
     fill_in I18n.t('.activerecord.attributes.property.price'),             with: property[:price]
     fill_in I18n.t('.activerecord.attributes.property.description'),       with: property[:description]
+    fill_in I18n.t('.activerecord.attributes.property.rule'), with: rule[:description]
 
     submit.click
+
+
     expect(page).to have_css(".card-content", text: I18n.t('.controllers.property.create.flash.notice'))
   end
 

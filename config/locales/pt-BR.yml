@@ -13,6 +13,7 @@ pt-BR:
     models:
       property: 'Imóvel'
       archetype: 'Tipo'
+      rule: 'Regras da Casa'
     attributes:
       property:
         title: 'Título'
@@ -26,6 +27,7 @@ pt-BR:
         price: 'Preço'
         description: 'Descrição'
         archetype: 'Tipo'
+        rule: 'Regras da Casa'
       type_fraternity:
         fraternity: 'República Masculina'
         sorority: 'República Femenina'
@@ -40,6 +42,8 @@ pt-BR:
         homestay: 'Casa de Família'
         pensionatos: 'Pensão'
         fraternity: 'República'
+      rule:
+        description: 'Regras da Casa'
 
     errors:
       messages:

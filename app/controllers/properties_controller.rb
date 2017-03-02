@@ -5,6 +5,7 @@
 
   def new
     @property = Property.new
+    @property.build_rule
   end
 
   def create
@@ -26,6 +27,10 @@
   private
 
   def property_params
-    params.require(:property).permit(:title, :accommodates, :bathrooms, :number_of_rooms,:furnished, :single_room, :share_room, :price, :description, :archetype_id )
+    params.require(:property).permit(:title, :accommodates,
+                                     :bathrooms, :number_of_rooms,:furnished,
+                                     :single_room, :share_room, :price, :description,
+                                     :archetype_id,
+                                     rule_attributes: [:id, :description, :created_at, :updated_at, :_destroy] )
   end
 end

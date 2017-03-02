@@ -53,6 +53,14 @@
       <%= f.input :description, as: :text, input_html: {id: "textarea1", class: "materialize-textarea", "data-length": 250} %>
     </div>
 
+
+    <%= f.simple_fields_for :rule do |r| %>
+    <div class="input-field col s12">
+      <%= r.input :description, as: :text, input_html: {id: "textarea2", class: "materialize-textarea", "data-length": 250} %>
+    </div>
+
+   <% end %>
+
     <div class="input-field col s12">
       <%= f.button :submit %>
     </div>

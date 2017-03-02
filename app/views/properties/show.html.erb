@@ -1,41 +1,64 @@
-<h3><%= @property.title %></h3>
 <div class="container">
+
+   <h4>Imóvel</h4>
+   <hr>
+
+    <div class="col s12">
+     <%= @property.title %>
+    </div>
+
     <div class="row">
         <div class="col s6">
+            <h5>Tipo de Imóvel</h5>
             <b><%= @property.archetype.name %></b>
         </div>
         <div class="col s6">
+            <h5>Número de Acomodações</h5>
             <b><%= @property.accommodates %></b>
         </div>
     </div>
     <div class="row">
         <div class="col s6">
+            <h5>Número de Banheiros</h5>
             <b><%= @property.bathrooms %></b>
         </div>
         <div class="col s6">
+            <h5>Número de Quartos</h5>
             <b><%= @property.number_of_rooms %></b>
         </div>
     </div>
     <div class="row">
         <div class="col s6">
+            <h5>Imobiliada</h5>
             <b><%= @property.furnished %></b>
         </div>
         <div class="col s6">
+            <h5>Quarto Individual</h5>
             <b><%= @property.single_room %></b>
         </div>
     </div>
     <div class="row">
         <div class="col s6">
+            <h5>Quarto Compartilhado</h5>
             <b><%= @property.share_room %></b>
         </div>
         <div class="col s6">
+            <h5>Preço</h5>
             <b><%= @property.price %></b>
         </div>
     </div>
 
     <div class="row">
         <div class="col s12">
+            <h5>Descrição</h5>
             <b><%= @property.description %></b>
         </div>
     </div>
+
+    <h4>Regras da Casa</h4>
+    <hr>
+    <div class="col s12">
+        <%= @property.rule.description %>
+    </div>
+
 </div>
