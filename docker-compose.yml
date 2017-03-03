@@ -17,3 +17,5 @@ services:
   selenium:
     image: selenium/standalone-firefox
     container_name: selenium
+    ports:
+      - "4444:4444"

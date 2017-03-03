@@ -10,13 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170212215034) do
+ActiveRecord::Schema.define(version: 20170303023810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "archetypes", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "comforts", force: :cascade do |t|
+    t.boolean "kitchen"
+    t.boolean "tv"
+    t.boolean "air_conditioning"
+    t.boolean "washing_machine"
+    t.boolean "dryer"
+    t.boolean "garage"
+    t.boolean "cabo_tv"
+    t.boolean "pet"
+    t.boolean "smoke"
+    t.boolean "accessibility"
+    t.boolean "elevator"
+    t.boolean "intercom"
+    t.boolean "concierge"
+    t.boolean "pool"
+    t.boolean "service_area"
+    t.boolean "gym"
+    t.boolean "electric_iron"
+    t.boolean "notebook_space"
+    t.boolean "private_entrance"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -32,13 +54,17 @@ ActiveRecord::Schema.define(version: 20170212215034) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "archetype_id"
+    t.integer  "rule_id"
+    t.integer  "comfort_id"
     t.index ["archetype_id"], name: "index_properties_on_archetype_id", using: :btree
+    t.index ["comfort_id"], name: "index_properties_on_comfort_id", using: :btree
+    t.index ["rule_id"], name: "index_properties_on_rule_id", using: :btree
   end
 
-  create_table "types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "rules", force: :cascade do |t|
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +85,6 @@ ActiveRecord::Schema.define(version: 20170212215034) do
   end
 
   add_foreign_key "properties", "archetypes"
+  add_foreign_key "properties", "comforts"
+  add_foreign_key "properties", "rules"
 end

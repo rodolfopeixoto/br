@@ -1,6 +1,6 @@
 SimpleForm.setup do |config|
   config.error_notification_class = 'no'
-  config.button_class = 'waves-effect waves-light btn'
+  config.button_class = 'btn'
   config.boolean_label_class = nil
   config.item_wrapper_tag = :p
   config.wrappers :vertical_form, tag: 'div', class: 'input-field', error_class: 'has-error' do |b|

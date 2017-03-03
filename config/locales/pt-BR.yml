@@ -4,7 +4,7 @@ pt-BR:
       no_property_registered: "Você não tem imóvel cadastrado"
       text_no_property_registered: "Ganhe dinheiro alugando seu imóvel para os universitários da sua cidade. Você estará ajudando não só os alunos, mas também o seu país!"
       new_property: "Cadastrar Imóvel"
-    new:
+    form:
       hi: "Olá"
       title_preparation_ad: "Vamos preparar você para receber os universitários."
       step: 'Etapa'
@@ -13,6 +13,8 @@ pt-BR:
     models:
       property: 'Imóvel'
       archetype: 'Tipo'
+      rule: 'Regra'
+      comfort: 'Comodidades'
     attributes:
       property:
         title: 'Título'
@@ -26,6 +28,26 @@ pt-BR:
         price: 'Preço'
         description: 'Descrição'
         archetype: 'Tipo'
+        rule: 'Descrição'
+        kitchen: 'Cozinha'
+        tv: 'Televisão'
+        air_conditioning: 'Ar Condicionado'
+        washing_machine: 'Máquina de Lavar Roupa'
+        dryer: 'Secador'
+        garage: 'Garagem'
+        cabo_tv: 'TV à Cabo'
+        pet: 'Animal de Estimação'
+        smoke: 'Fumar'
+        accessibility: 'Acessibilidade'
+        elevator: 'Elevador'
+        intercom: 'Interfone'
+        concierge: 'Porteiro'
+        pool: 'Piscina'
+        service_area: 'Área de Serviço'
+        gym: 'Academia'
+        electric_iron: 'Ferro Elétrico'
+        notebook_space: 'Espaço para Notebook'
+        private_entrance: 'Entrada Privada'
       type_fraternity:
         fraternity: 'República Masculina'
         sorority: 'República Femenina'
@@ -40,6 +62,29 @@ pt-BR:
         homestay: 'Casa de Família'
         pensionatos: 'Pensão'
         fraternity: 'República'
+      rule:
+        description: 'Descrição'
+      comfort:
+        kitchen: 'Cozinha'
+        tv: 'Televisão'
+        air_conditioning: 'Ar Condicionado'
+        washing_machine: 'Máquina de Lavar Roupa'
+        dryer: 'Secador'
+        garage: 'Garagem'
+        cabo_tv: 'TV à Cabo'
+        pet: 'Animal de Estimação'
+        smoke: 'Fumar'
+        accessibility: 'Acessibilidade'
+        elevator: 'Elevador'
+        intercom: 'Interfone'
+        concierge: 'Porteiro'
+        pool: 'Piscina'
+        service_area: 'Área de Serviço'
+        gym: 'Academia'
+        electric_iron: 'Ferro Elétrico'
+        notebook_space: 'Espaço para Notebook'
+        private_entrance: 'Entrada Privada'
+
 
     errors:
       messages:
@@ -188,7 +233,7 @@ pt-BR:
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
+      create: Cadastrar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
   number:

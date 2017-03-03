@@ -10,6 +10,12 @@ FactoryGirl.define do
      share_room        false
      price             400.00
      description       {  FFaker::Lorem.sentence(1) }
+     rule
+     comfort
+  end
+
+  trait :invalid do
+    title { nil }
   end
 
   trait :invalid do
