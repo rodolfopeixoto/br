@@ -11,6 +11,7 @@ FactoryGirl.define do
      price             400.00
      description       {  FFaker::Lorem.sentence(1) }
      rule
+     comfort
   end
 
   trait :invalid do

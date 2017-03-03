@@ -26,11 +26,13 @@ RSpec.describe Property, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:archetype)}
+    it { should belong_to(:archetype) }
     it { should belong_to(:rule) }
+    it { should belong_to(:comfort) }
   end
 
   describe 'accept nested attributes' do
-    it { should accept_nested_attributes_for(:rule).allow_destroy(true)}
+    it { should accept_nested_attributes_for(:rule).allow_destroy(true)    }
+    it { should accept_nested_attributes_for(:comfort).allow_destroy(true) }
   end
 end

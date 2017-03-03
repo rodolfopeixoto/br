@@ -1,0 +1,183 @@
+<% if @property.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+       <%= "#{I18n.t('.form.message.invalid')} #{pluralize(@property.errors.count, I18n.t('.word.errors'))} #{I18n.t('.form.message.invalid_continue')}" %>
+    </h2>
+    <ul>
+       <% @property.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+    </ul>
+   </div>
+    <% end %>
+
+<div class="row">
+  <div class="col s12">
+    <h2 class="properties_new_h2"><%= "#{t('.hi')}, Rodolfo! #{ t('.title_preparation_ad')}" %></h2>
+
+  <%= simple_form_for(@property, html: { novalidate: true }) do |f| %>
+
+
+    <div class="col s6">
+        <h3>O espaço</h3>
+        <hr>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.input :title, required: true %>
+    </div>
+
+
+    <div class="input-field col s12">
+      <%= f.input :description, as: :text, input_html: {id: "textarea1", class: "materialize-textarea", "data-length": 250} %>
+    </div>
+
+    <div class="input-field col s3">
+      <%= f.association :archetype, collection: Archetype.all.map { |key| [I18n.t(".activerecord.attributes.archetype.#{key.name}"), key.id ] }, default: 1  %>
+    </div>
+    <div class="input-field col s3">
+      <%= f.input :accommodates, input_html: { min: 1, max: 40 } %>
+    </div>
+    <div class="input-field col s3">
+      <%= f.input :bathrooms, input_html: {  min: 1, max: 10 } %>
+    </div>
+    <div class="input-field col s3">
+      <%= f.input :number_of_rooms, input_html: { min: 1, max: 20 } %>
+    </div>
+    <div class="input-field col s4">
+      <%= f.input :furnished, as: :boolean, checked_value: true, unchecked_value: false %>
+    </div>
+    <div class="input-field col s4">
+      <%= f.input :single_room, as: :boolean, checked_value: true, unchecked_value: false %>
+    </div>
+
+    <div class="input-field col s4">
+      <%= f.input :share_room, as: :boolean %>
+    </div>
+
+
+    <div class="input-field col s2">
+      <%= f.input :price %>
+    </div>
+
+
+
+    <div class="col s12">
+        <h3>Regras da Casa</h3>
+        <hr>
+    </div>
+
+    <%= f.simple_fields_for :rule do |r| %>
+    <div class="input-field col s12">
+      <%= r.input :description, as: :text, input_html: {id: "textarea2", class: "materialize-textarea", "data-length": 250} %>
+    </div>
+
+   <% end %>
+
+
+
+    <div class="col s12">
+        <h3>Comodidades</h3>
+        <hr>
+    </div>
+
+
+    <%= f.simple_fields_for :comfort do |c| %>
+
+
+
+      <div class="input-field col s3">
+        <%= c.input :kitchen, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :tv, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :air_conditioning, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :washing_machine, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+
+      <div class="input-field col s3">
+        <%= c.input :dryer, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :garage, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :pet, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :smoke, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+
+      <div class="input-field col s3">
+        <%= c.input :accessibility, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :elevator, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :intercom, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :concierge, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+      <div class="input-field col s3">
+        <%= c.input :pool, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :service_area, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :gym, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s3">
+        <%= c.input :cabo_tv, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+
+      <div class="input-field col s4">
+        <%= c.input :notebook_space, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+      <div class="input-field col s4">
+        <%= c.input :electric_iron, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+      <div class="input-field col s4">
+        <%= c.input :private_entrance, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+
+
+    <% end %>
+
+
+    <div class="input-field col s12">
+      <%= f.button :button , name: 'action' %>
+    </div>
+<% end %>
+
+  </div>
+</div>
