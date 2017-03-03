@@ -12,10 +12,10 @@
   def create
     @property = Property.new(property_params)
 
-    if @property.valid?
-       @property.save
-        flash[:notice] = I18n.t('.controllers.property.create.flash.notice')
-        redirect_to @property
+    if @property.valid? 
+      @property.save
+      flash[:notice] = I18n.t('.controllers.property.create.flash.notice')
+      redirect_to @property 
     else
         render :new
     end

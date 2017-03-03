@@ -17,4 +17,8 @@ FactoryGirl.define do
   trait :invalid do
     title { nil }
   end
+
+  trait :invalid do
+    title { nil }
+  end
 end

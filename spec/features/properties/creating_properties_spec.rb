@@ -2,8 +2,7 @@ require 'rails_helper'
 require 'support/form'
 
 RSpec.feature "The user can register a new properties" do
-
-
+  
   let(:archetype) { create_list(:archetype, 3) }
   let(:property) { FactoryGirl.create(:property) }
   let(:rule) { FactoryGirl.create(:rule) }

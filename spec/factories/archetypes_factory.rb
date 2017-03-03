@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :archetype do
-    name 'fraternity'
+    sequence(:name) { |n| "Archetype #{n}" }
   end
 end

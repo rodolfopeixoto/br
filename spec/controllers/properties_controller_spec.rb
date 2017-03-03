@@ -58,10 +58,11 @@ RSpec.describe PropertiesController, type: :controller do
     end
 
    context 'invalid data' do
-    let(:archetype_id) { FactoryGirl.create(:archetype).id }
+    let(:archetype_id) { FactoryGirl.create(:archetype).id } 
     let(:rule) { FactoryGirl.create(:rule) }
     let(:comfort) { FactoryGirl.create(:comfort) }
     let(:property_invalid) {attributes_for(:property, :invalid ,archetype_id: archetype_id, rule_attributes: attributes_for(:rule), comfort_attributes: attributes_for(:comfort) )}
+ 
 
      it 'renders :new template' do
       post :create, params: { property: property_invalid}

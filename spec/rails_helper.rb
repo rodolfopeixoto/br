@@ -7,7 +7,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'capybara/rspec'
 require 'ffaker'
-require 'support/database_cleaner'
+# require 'support/database_cleaner'
 require 'support/locale'
 require 'factory_girl_rails'
 
@@ -24,14 +24,13 @@ if ENV['SELENIUM_REMOTE_HOST']
   end
 end
 
-
 RSpec.configure do |config|
+  config.use_transactional_fixtures = true
 
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  # config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include Warden::Test::Helpers, type: :feature
+  config.include FactoryGirl::Syntax::Methods
 
   Shoulda::Matchers.configure do |config|
     config.integrate do |with|
@@ -39,8 +38,6 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
-
-
 
   config.before(:each) do
     if /selenium_remote/.match Capybara.current_driver.to_s
@@ -55,12 +52,11 @@ RSpec.configure do |config|
   config.after(:each) do
     Capybara.reset_sessions!
     Capybara.use_default_driver
-    Capybara.app_host = nil
-  end
-
+    Capybara.app_host = nil 
   config.include FactoryGirl::Syntax::Methods
 
 
 
 
+ 
 end
