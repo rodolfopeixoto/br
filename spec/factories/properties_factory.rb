@@ -11,4 +11,8 @@ FactoryGirl.define do
      price             400.00
      description       {  FFaker::Lorem.sentence(1) }
   end
+
+  trait :invalid do
+    title { nil }
+  end
 end
