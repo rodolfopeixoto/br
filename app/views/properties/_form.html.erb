@@ -29,7 +29,7 @@
 
 
     <div class="input-field col s12">
-      <%= f.input :description, as: :text, input_html: {id: "textarea1", class: "materialize-textarea", "data-length": 250} %>
+      <%= f.input :description, as: :text, input_html: { class: "materialize-textarea", "data-length": 250} %>
     </div>
 
     <div class="input-field col s3">
@@ -69,7 +69,7 @@
 
     <%= f.simple_fields_for :rule do |r| %>
     <div class="input-field col s12">
-      <%= r.input :description, as: :text, input_html: {id: "textarea2", class: "materialize-textarea", "data-length": 250} %>
+      <%= r.input :description, as: :text, input_html: {class: "materialize-textarea", "data-length": 250} %>
     </div>
 
    <% end %>

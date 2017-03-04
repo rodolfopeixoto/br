@@ -52,11 +52,8 @@ RSpec.configure do |config|
   config.after(:each) do
     Capybara.reset_sessions!
     Capybara.use_default_driver
-    Capybara.app_host = nil 
+    Capybara.app_host = nil
+  end
+
   config.include FactoryGirl::Syntax::Methods
-
-
-
-
- 
 end
